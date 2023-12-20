@@ -13,18 +13,18 @@
     <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
     <link rel="icon" href="http://www.zju.edu.cn/_upload/tpl/00/14/20/template20/images/favicon.ico" type="image/x-icon">
     <style>
-    	
+
     	#canvas {
     		position: absolute;
     		z-index: -1;
     	}
     </style>
-	<title>军训稿件提交系统</title>
+	<title> Search Genie </title>
 </head>
 <body>
 	<canvas id="canvas"></canvas>
 	<div class="container">
-		
+
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -34,22 +34,23 @@
 							&times;
 						</button>
 						<h4 class="modal-title" id="myModalLabel">
-							欢迎来到ZJUintl军训稿件提交系统!
+							Search Genie
 						</h4>
+						
 					</div>
 					<div class="modal-body">
-						<h5>V1.2 更新日志</h5>
-						1.修复了由于JS异步产生的若干个提交Bug<br>
-						2.添加了文章提交查询功能与加载进度条<br>
-						3.优化了系统的移动端适配<br><br>
-						请大家注意稿件格式规范，如果在稿件内部没有<kbd>名字</kbd>，则视未交处理<br>
-						<!--请注意稿件中<strong>诗歌</strong>的数量，当到达一定量后，系统会<strong>关闭</strong>诗歌提交入口-->
-						<img src="https://m.laphets.com/sam.jpg" class="img-responsive center-block">
+						<h5>V0.0 Changelog </h5>
+						1...<br>
+						2...<br>
+						3...<br><br>
+						Please pay attention to specifications for <kbd> usage  </kbd> instructions <br>
+						
+						<!-- <img src="https://m.laphets.com/sam.jpg" class="img-responsive center-block"> -->
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default btn-success" data-dismiss="modal">我已了解
+						<button type="button" class="btn btn-default btn-success" data-dismiss="modal">I have understood
 						</button>
-						<button type="button" class="btn btn-default" >偏不这么做
+						<button type="button" class="btn btn-default" >Hide
 						</button>
 					</div>
 				</div><!-- /.modal-content -->
@@ -112,70 +113,82 @@
 		</div>
 
 
-		<h1>ZJUintl军训稿件提交系统</h1>
+		<h1>Search Genie</h1>
 		<!--<h3>请在文章中加上<kbd>姓名</kbd>！看样式 （提交按钮按一次就好）</h3> -->
+		<h4> All-in-one, AI powered smart search-engine for all your needs... information retrieval, custom document search, recommendation, QnA. </h4>
 		<form  name="input" action="" method="get">
 			<div class="row"> 
 
 
 			<div class="form-group col-md-5">
-            	姓名<input type="text" value="" placeholder="Enter your name" class="form-control" id="Name" required/>
+            	Name<input type="text" value="" placeholder="Enter your name" class="form-control" id="Name" required/>
         	</div>
 			<div class="form-group col-md-5">
-            	学号<input type="text" value="" placeholder="ZJUid" class="form-control" id="Number" required/>
+            	ID<input type="text" value="" placeholder="doc identifier" class="form-control" id="d_id" required/>
         	</div>
 
 
 			</div>
 			<div class="row">
 				<div class="col-md-3">
-					稿件类型
+					Document Type
 					<br>
 					<select class="form-control select select-primary" data-toggle="select" id="Type">
-		            	<option value="军训感想">军训感想</option>
-		            	<option value="通讯稿">通讯稿</option>
-		            	<option value="诗词">诗词</option>
-		            	<option value="散文">散文</option>
-		            	<option value="词曲填词">词曲填词</option>
-		            	<option value="书法">书法</option>
-		            	<option value="橡皮章">橡皮章</option>
-		            	<option value="绘画">绘画</option>
-		            	<option value="其他">其他</option>
+		            	<option value="json">json</option>
+		            	<option value="test">txt</option>
+		            	<option value="word">word</option>
+		            	<option value="pdf">pdf</option>
+		            	<option value="xml">xml</option>
+		            	<option value="csv">csv</option>
+		            	<option value="xls">xls</option>
+		            	<option value="html">html</option>
+		            	<option value="ppt">ppt</option>
 		          	</select>					
 				</div>
 				<div class="form-group col-md-7">
-	            	稿件标题<input type="text" value="" placeholder="Title" class="form-control" id="Title" required/>
+	            	Document Title <input type="text" value="" placeholder="Title" class="form-control" id="Title" required/>
 	        	</div>						
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-3">
-					<input type="file" class="btn btn-block btn-lg btn-warning" id="profilePhotoFileUpload" required accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">		
+					<input type="file" class="btn btn-block btn-lg btn-warning" id="FileUpload" required/>		
 				</div>
 				<div class="col-md-3">
-			 		<input class="btn btn-block btn-lg btn-success" type="button" value="查询递交结果" id="Request">
+			 		<input class="btn btn-block btn-lg btn-success" type="button" value="Query Submission Results" id="Request">
 				</div>
 				<div class="col-md-4">
-			 		<input class="btn btn-block btn-lg btn-inverse" type="submit" value="提交" id="submitBut">
+			 		<input class="btn btn-block btn-lg btn-inverse" type="submit" value="Submit" id="Submitbtn">
 				</div>				
 			</div>						
 		</form>
 
+		<hr>
+		
+		<div class="my-3" id="responseJsonBox">
+            <div class="mb-3 form-group row res-container">
+                <label for="responseJsonText" class="col-sm-2 col-form-label res-lab">Response</label>
+                <div class="col-sm-10 res-prompt">
+                    <pre id="responsePre" class="language-javascript" ><code id="responsePrism" class="language-javascript" >Your response will appear here!</code></pre>
+                </div>
+            </div>
+        </div>
+
 		<br><br>
-		<div class="row">
+		<!-- <div class="row">
 			<p class="text-left">
-			系统使用说明：<br>
-			1.文件类型要求为 <kbd>*.docx</kbd><br>
-			2.Word文件名系统会自动生成，所以可以随意一些.<br>
-			3.务必注意<a href="https://m.laphets.com/sample.docx"><strong>文件内容格式规范</strong>.</a><br>
-			4.请不要恶意使用本系统(包括且不限于XSS等手段)(并没有写filter)<br>
-			5.如遇问题，欢迎联(sao)系(rao)我: <kbd>i@laphets.com</kbd><br>	
-			6.<strong>重复提交会覆盖原先提交内容</strong>
+			System Usage Guidelines<br>
+			1. The file type requirement is <kbd> *.docx </kbd><br>	
+			2. The Word file name will be automatically generated by the system, so you can be arbitrary.<br>	
+			3. Be sure to pay attention to the file content format specifications .<br>	
+			4. Please do not use this system maliciously (including but not limited to XSS and other means ) (no filter is written)<br>	
+			5. For any query or suggesting improveoents, please contact : <kbd> help-desk@search-genie.com </kbd> <br>	
+			6. <strong>submissions will overwrite the original submission content.</strong> <br>	
 			</p>
-		</div>
-		<nav class="navbar-fixed-bottom">
+		</div> -->
+		<nav class="navbar-bottom">
 		  <div class="container">
-		    <p class="text-center">Copyright © 2015-2017 <a href="https://blog.laphets.com" target="_blank">Laphets</a>. All Rights Reserved.</p>
+		    <p class="text-center">Copyright © 2024 <a href="#" target="_blank">Search Genie</a>. All Rights Reserved.</p>
 		  </div>
 		</nav>
 		

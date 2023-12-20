@@ -54,6 +54,70 @@
   -o-animation: pace-spinner 400ms linear infinite;
   animation: pace-spinner 400ms linear infinite;
 }
+.my-3{
+  margin-top: 1rem!important;
+  margin-bottom: 1rem!important;
+margin-top: 10px;
+}
+
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+hr:not([size]){
+  height: 1px;
+}
+
+hr{
+  margin: 2rem 0;
+  color: #212529;
+}
+
+.res-prompt{
+  padding: 0px 20px;
+  width: 50%;
+}
+
+.res-lab{
+  display: inline-block;
+}
+
+:not(pre)>code[class*=language-], pre[class*=language-] {
+  background: #272822;
+}
+
+/* pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+} */
+
+code[class*=language-], pre[class*=language-] {
+  color: #f8f8f2;
+  width: 80%;
+  background: 0 0;
+  background: #272822;
+  opacity: 0.95;
+  text-shadow: 0 1px rgba(0,0,0,.3);
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
 
 @-webkit-keyframes pace-spinner {
   0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
