@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Pace.js -->
+    <link href="pace-theme-flash.css" rel="stylesheet" />
+    <script src="pace.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">	
+    <!-- Flat UI -->
+    <link href="https://cdn.bootcss.com/flat-ui/2.3.0/css/flat-ui.min.css" rel="stylesheet">
+    <link rel="icon" href="http://www.zju.edu.cn/_upload/tpl/00/14/20/template20/images/favicon.ico" type="image/x-icon">
+    <style>
+
+    	#canvas {
+    		position: absolute;
+    		z-index: -1;
+    	}
+    </style>
+	<title> Search Genie </title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="container">
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							Search Genie
+						</h4>
+						
+					</div>
+					<div class="modal-body">
+						<h5>V0.0 Changelog </h5>
+						1...<br>
+						2...<br>
+						3...<br><br>
+						Please pay attention to specifications for <kbd> usage  </kbd> instructions <br>
+						
+						<!-- <img src="https://m.laphets.com/sam.jpg" class="img-responsive center-block"> -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-success" data-dismiss="modal">I have understood
+						</button>
+						<button type="button" class="btn btn-default" >Hide
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="SubmitModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							您的稿件已经成功提交
+						</h4>
+					</div>
+					<div class="modal-body">
+					感谢您的配合 (●ﾟωﾟ●)！<br>
+					<del>今天是系统投入使用的第三天，也是最后一天，</del>最后一天转为泡影，太多的遗憾无法说出口。在这里非常感谢各位同学的支持与配合，让我有机会去不断的完善系统内部逻辑与UI细节。我已经把系统源码部署在<a href="https://github.com/laphets/ZJUintlSubmit" target="_blank">GitHub</a>上，如果你有兴趣，欢迎查看。<br>
+					或许再也没有人会来访问这个网页了吧，这个累积了我3天心血，500+行代码的东西了吧...
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+
+
+		<!-- RequestModel -->
+		<div class="modal fade" id="requestModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							稿件提交情况查询
+						</h4>
+					</div>
+					<div class="modal-body">
+			        	<input type="text" value="" placeholder="请在此键入您的ZJUid" class="form-control" id="questNumber" required/>
+			        	<br>
+			        	<p id="statusBar"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-success" id="requestBut">查询
+						</button>
+						<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+
+		<h1>Search Genie</h1>
+		<!--<h3>请在文章中加上<kbd>姓名</kbd>！看样式 （提交按钮按一次就好）</h3> -->
+		<h4> All-in-one, AI powered smart search-engine for all your needs... information retrieval, custom document search, recommendation, QnA. </h4>
+		<form  name="input" action="" method="get">
+			<div class="row"> 
+
+
+			<div class="form-group col-md-5">
+            	Name<input type="text" value="" placeholder="Enter your name" class="form-control" id="Name" required/>
+        	</div>
+			<div class="form-group col-md-5">
+            	ID<input type="text" value="" placeholder="doc identifier" class="form-control" id="d_id" required/>
+        	</div>
+
+
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					Document Type
+					<br>
+					<select class="form-control select select-primary" data-toggle="select" id="Type">
+		            	<option value="json">json</option>
+		            	<option value="test">txt</option>
+		            	<option value="word">word</option>
+		            	<option value="pdf">pdf</option>
+		            	<option value="xml">xml</option>
+		            	<option value="csv">csv</option>
+		            	<option value="xls">xls</option>
+		            	<option value="html">html</option>
+		            	<option value="ppt">ppt</option>
+		          	</select>					
+				</div>
+				<div class="form-group col-md-7">
+	            	Document Title <input type="text" value="" placeholder="Title" class="form-control" id="Title" required/>
+	        	</div>						
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-3">
+					<input type="file" class="btn btn-block btn-lg btn-warning" id="FileUpload" required/>		
+				</div>
+				<div class="col-md-3">
+			 		<input class="btn btn-block btn-lg btn-success" type="button" value="Query Submission Results" id="Request">
+				</div>
+				<div class="col-md-4">
+			 		<input class="btn btn-block btn-lg btn-inverse" type="submit" value="Submit" id="Submitbtn">
+				</div>				
+			</div>						
+		</form>
+
+		<hr>
+		
+		<div class="my-3" id="responseJsonBox">
+            <div class="mb-3 form-group row res-container">
+                <label for="responseJsonText" class="col-sm-2 col-form-label res-lab">Response</label>
+                <div class="col-sm-10 res-prompt">
+                    <pre id="responsePre" class="language-javascript" ><code id="responsePrism" class="language-javascript" >Your response will appear here!</code></pre>
+                </div>
+            </div>
+        </div>
+
+		<br><br>
+		<!-- <div class="row">
+			<p class="text-left">
+			System Usage Guidelines<br>
+			1. The file type requirement is <kbd> *.docx </kbd><br>	
+			2. The Word file name will be automatically generated by the system, so you can be arbitrary.<br>	
+			3. Be sure to pay attention to the file content format specifications .<br>	
+			4. Please do not use this system maliciously (including but not limited to XSS and other means ) (no filter is written)<br>	
+			5. For any query or suggesting improveoents, please contact : <kbd> help-desk@search-genie.com </kbd> <br>	
+			6. <strong>submissions will overwrite the original submission content.</strong> <br>	
+			</p>
+		</div> -->
+		<nav class="navbar-bottom">
+		  <div class="container">
+		    <p class="text-center">Copyright © 2024 <a href="#" target="_blank">Search Genie</a>. All Rights Reserved.</p>
+		  </div>
+		</nav>
+		
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/flat-ui/2.3.0/js/flat-ui.min.js"></script>
+	<script src="application.js"></script>
+	<script type="text/javascript" src="bmob-min.js"></script>
+	<script src="work.js"></script>
+	<script type="text/javascript" src="canvas.js"></script>
+</body>
+</html>
