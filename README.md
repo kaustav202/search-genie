@@ -1,6 +1,6 @@
 # Search Genie
 
-#### A generative AI based application for Hybrid Full-Text Search with contextual meaning and relevance.
+#### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, contextual meaning and relevance.
 
 - Similarity Search
 - Keyword baased Semantic Search
