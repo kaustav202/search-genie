@@ -1,4 +1,4 @@
-# search-genie
+# Search Genie
 
 #### A generative AI based application for Hybrid Full-Text Search with contextual meaning and relevance.
 
