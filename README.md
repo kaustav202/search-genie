@@ -1,7 +1,8 @@
 # Search Genie
 
 #### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, contextual meaning and relevance.
-<img src="https://github.com/kaustav202/search-genie/assets/89788120/5e8c9a17-4b47-4d77-8a10-2192ae05cc68" width="74%" />
+
+<img src="https://github.com/kaustav202/search-genie/assets/89788120/8984e120-9b15-4f6c-9506-265d0b1b44f6" width="65%" />
 
 
 <!-- <img src = "https://github.com/kaustav202/search-genie/assets/89788120/ea07883c-350e-4598-aad9-be6ea4e14f96" width="74%" /> -->
