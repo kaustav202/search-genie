@@ -1,8 +1,10 @@
 # Search Genie
 
 #### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, contextual meaning and relevance.
+<img src="https://github.com/kaustav202/search-genie/assets/89788120/5e8c9a17-4b47-4d77-8a10-2192ae05cc68" width="74%" />
 
-![vectordb](https://github.com/kaustav202/search-genie/assets/89788120/ea07883c-350e-4598-aad9-be6ea4e14f96)
+
+<!-- <img src = "https://github.com/kaustav202/search-genie/assets/89788120/ea07883c-350e-4598-aad9-be6ea4e14f96" width="74%" /> -->
 
 
 #### Vector databases store contextual representaion of data ( knowm as vectors ) in n-dimensional space. The vector representation allows the ability to preserve contextual information and also a huge scale of diversity in the data. Thus Vector databases store very accurate representation of thr data and can be used to accurately identify semantic similarity ( similarity search ) through it's fast andscalable ANN algorithm.
@@ -13,7 +15,7 @@ LLMs are generative, meaning that they produce meaningful, coherent text in a se
 - LLMs learn/memorize a compressed version of their training data – some information is always “lost” in a model’s internal representation of the data
 - An LLM cannot know facts that occurred after its training was completed
 
-![vectror_representation_similarity](https://github.com/kaustav202/search-genie/assets/89788120/b4575358-7414-41bc-872c-5c1de97ef0b3)
+<img src="https://github.com/kaustav202/search-genie/assets/89788120/b4575358-7414-41bc-872c-5c1de97ef0b3" width="74%" />
 
 
 Vector databases help address these problems, by functioning as the underlying storage layer that can be efficiently queried by an LLM to retrieve facts. Unlike traditional databases, vector DBs specialize in natively representing data as vectors. As a result, we can now build applications with an LLM sitting on top of a vector storage layer that contains recent, up-to-date, factual data (well past the LLM’s training date) and use them to “ground” the model, alleviating the hallucination problem.Because of their amenability to operating in embedding space, vector databases are proving to be very useful for semantic or similarity-based search for multiple forms of data
