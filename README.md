@@ -1,6 +1,6 @@
 # Search Genie
 
-#### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, contextual meaning and relevance.
+#### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, enriched with contextual meaning and relevance ranking, making it very practical for real life use cases to satisfactorily meet user's requirement,
 
 ### Hybrid Search System
 
@@ -11,23 +11,31 @@ The system is based on a hybrid search architecture that is able to understand t
 
 The architecture incorporates 1) Context 2) Semantic Meaning 3) Relevance at various points throughout the process, by utilizing graph database, contextual embeddings, vector database, Filtering Services and Large Language Model. This makes the system very adept at handling a diverse range of information retrieval requirements.
 
+An LLM layer is used as a conversational agent , which is grounded using vector db to remove all of the tradional drawbacks of an LLM based IE system , i.e. incorrect Information, not being up-to-date and loss of information.
+
 ### High Level Architecture
 
 ## Ingestion Architecture
 
 ![Search Genie-Page-1 drawio (2)](https://github.com/kaustav202/search-genie/assets/89788120/6fa5097c-52a0-424a-b46c-01c239084270)
 
+<br>
 
 - A user enters a word, excel, pdf, text or custom data
-- The pre-processing service cleans, organizes it into a document with the metadata and writes it into two data stores 1) document corpus & 2) Elastic-search - where it's indexed and used for keyword search 
-- The text is passed to an embedding model (bi-encoder), which then generates a embedding vector and stores it in the vector database ( knowledge base )
+- The pre-processing service cleans, organizes it into a document with the metadata and writes it into two data stores 1) document corpus & 2) Elastic-search - where it's indexed and used for keyword search
 - Topic Models, Topic Distributions, NER and graph semantics are stored from the documents in a graph database
+- The text is passed to an embedding model (bi-encoder), which then generates a embedding vector and stores it in the vector database ( knowledge base )
   
+
+<br>
+<br>
 
 
 ## Search Architecture
 
 ![Search Genie-Page-2 drawio (14)](https://github.com/kaustav202/search-genie/assets/89788120/b6f0a306-32b4-47c2-bcf9-ee8d1bceaf07)
+
+<br>
 
 - Human asks a question in natural language via the UI
 - A pre-filter service uses metadata to reduce the search space and also for pre-ranking of documents
