@@ -2,6 +2,44 @@
 
 #### A generative AI based smart information retrieval system featuring Hybrid Full-Text Search, contextual meaning and relevance.
 
+### Hybrid Search System
+
+![Search Genie-Page-5 drawio](https://github.com/kaustav202/search-genie/assets/89788120/2f82698a-48c5-4602-b517-82ee740ab2c7)
+
+
+The system is based on a hybrid search architecture that is able to understand the meaning of the search term and the user's intent for searching a particular keyword or phrase. As a result, it is able to produce highly accurate results that are relevant to the particular user's need and personalised. 
+
+The architecture incorporates 1) Context 2) Semantic Meaning 3) Relevance at various points throughout the process, by utilizing graph database, contextual embeddings, vector database, Filtering Services and Large Language Model. This makes the system very adept at handling a diverse range of information retrieval requirements.
+
+### High Level Architecture
+
+## Ingestion Architecture
+
+![Search Genie-Page-1 drawio (2)](https://github.com/kaustav202/search-genie/assets/89788120/6fa5097c-52a0-424a-b46c-01c239084270)
+
+
+- A user enters a word, excel, pdf, text or custom data
+- The pre-processing service cleans, organizes it into a document with the metadata and writes it into two data stores 1) document corpus & 2) Elastic-search - where it's indexed and used for keyword search 
+- The text is passed to an embedding model (bi-encoder), which then generates a embedding vector and stores it in the vector database ( knowledge base )
+- Topic Models, Topic Distributions, NER and graph semantics are stored from the documents in a graph database
+  
+
+
+## Search Architecture
+
+![Search Genie-Page-2 drawio (14)](https://github.com/kaustav202/search-genie/assets/89788120/b6f0a306-32b4-47c2-bcf9-ee8d1bceaf07)
+
+- Human asks a question in natural language via the UI
+- A pre-filter service uses metadata to reduce the search space and also for pre-ranking of documents
+- The question vector is passed to the vector DB, which returns the top-k most similar results, obtained via an ANN search. This step massively narrows down the search space for the LLM, used in the next step
+- An LLM prompt is constructed, converted to an embedding, and passed to the it. The LLM searches the top-k results for the information using the context provided, and produces an answer to the question that makes the semantic similarity accounted for in the result
+- A LangChain agent is used to provide generative QA chat interfaces by making composable workflows that adapt dynamically at runtime. This makes it very convenient, as the prompt can be dynamically constructed with the LLM’s native embedding module. It also acts as orchestrator between vector db , embedding model and the llm
+- A keyword search through fast index lookup is performed on the elasticsearch collection, which returns exact or most likely matches
+- Both the candidates are are combined by a cross-encoder service that classifies a pair of sentences by assigning them a score between 0 and 1, via a softmax layer. This is termed re-ranking, and is a very powerful approach to obtaining results that combine the best of both worlds (keyword + vector search)
+-  Additional context is added by graph semantic search and Topic Distributions which help to provide more relevant results and also recommendations of similar topics & documents
+- The answer is sent back to the human
+
+
 <img src="https://github.com/kaustav202/search-genie/assets/89788120/5c51854b-65f3-48f4-9ad7-acecfad39979" width="55%" />
 
 
