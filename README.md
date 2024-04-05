@@ -7,11 +7,11 @@
 ![Search Genie-Page-5 drawio](https://github.com/kaustav202/search-genie/assets/89788120/2f82698a-48c5-4602-b517-82ee740ab2c7)
 
 
-The system is based on a hybrid search architecture that is able to understand the meaning of the search term and the user's intent for searching a particular keyword or phrase. As a result, it is able to produce highly accurate results that are relevant to the particular user's need and personalised. 
+The system is based on a hybrid search architecture that is able to understand the meaning of the search term and the user's intent for searching a particular keyword or phrase. As a result, it is able to produce results that are relevant to the particular user's need and personalised. 
 
 The architecture incorporates 1) Context 2) Semantic Meaning 3) Relevance at various points throughout the process, by utilizing graph database, contextual embeddings, vector database, Filtering Services and Large Language Model. This makes the system very adept at handling a diverse range of information retrieval requirements.
 
-An LLM layer is used as a conversational agent , which is grounded using vector db to remove all of the tradional drawbacks of an LLM based IE system , i.e. incorrect Information, not being up-to-date and loss of information.
+An LLM layer is used as a conversational agent , which is grounded using vector db to remove all of the tradional drawbacks of an LLM based IE system , i.e. incorrect Information, not being up-to-date and loss of information producing highly accurate results.
 
 ### High Level Architecture
 
