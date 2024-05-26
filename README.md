@@ -13,9 +13,9 @@ The architecture incorporates 1) Context 2) Semantic Meaning 3) Relevance at var
 
 An LLM layer is used as a conversational agent , which is grounded using vector db to remove all of the tradional drawbacks of an LLM based IE system , i.e. incorrect Information, not being up-to-date and loss of information producing highly accurate results.
 
-### High Level Architecture
 
-## Ingestion Architecture
+<br>
+<br>
 
 ![Search Genie-Page-1 drawio (2)](https://github.com/kaustav202/search-genie/assets/89788120/6fa5097c-52a0-424a-b46c-01c239084270)
 
@@ -30,8 +30,6 @@ An LLM layer is used as a conversational agent , which is grounded using vector 
 <br>
 <br>
 
-
-## Search Architecture
 
 ![Search Genie-Page-2 drawio (14)](https://github.com/kaustav202/search-genie/assets/89788120/b6f0a306-32b4-47c2-bcf9-ee8d1bceaf07)
 
