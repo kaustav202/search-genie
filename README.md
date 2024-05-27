@@ -74,3 +74,8 @@ Because vector DBs store the data to be queried as embeddings, and the LLM also 
 - Vector DB
 - RAG
 - LLMs
+
+
+### Related concepts
+
+https://github.com/kaustav202/search-genie/blob/master/related-concepts.md
