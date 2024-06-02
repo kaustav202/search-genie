@@ -21,6 +21,7 @@ const embeddings = await hfInference.featureExtraction({
     console.log(typeof(res));
 }).catch((err)=>{
     console.log("Error ocurred while generating embeddings");
+    console.log(err);
 });
 
 
