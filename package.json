@@ -2,6 +2,9 @@
   "dependencies": {
     "@huggingface/agents": "^0.0.5",
     "@huggingface/hub": "^0.14.7",
-    "@huggingface/inference": "^2.6.6"
-  }
+    "@huggingface/inference": "^2.6.6",
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "type": "module"
 }
