@@ -17,7 +17,7 @@ An LLM layer is used as a conversational agent , which is grounded using vector 
 <br>
 <br>
 
-![Search Genie-Page-1 drawio (2)](https://github.com/kaustav202/search-genie/assets/89788120/6fa5097c-52a0-424a-b46c-01c239084270)
+![Ingestion Architecture](https://i.postimg.cc/FzkCJzs3/Search-Genie-A-2-Page-1-drawio-2.png)
 
 <br>
 
